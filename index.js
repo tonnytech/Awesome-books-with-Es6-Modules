@@ -1,8 +1,7 @@
-import Book from "./modules/books.js";
-import Store from "./modules/store.js";
-import UI from "./modules/user-interface.js";
+import Book from './modules/books.js';
+import Store from './modules/store.js';
+import UI from './modules/user-interface.js';
 import { DateTime } from './modules/luxon.js';
-
 
 // Display book events
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
@@ -46,31 +45,30 @@ const contact = document.querySelector('#contact');
 
 // forms to display and hide
 
-const FormAndList = document.querySelector('#form-and-list');
 const contactForm = document.querySelector('#contact-form');
 const listOfBooks = document.querySelector('#list-section');
 const addForm = document.querySelector('#add-books-form');
 const theTime = document.querySelector('#time-section');
 
-contact.addEventListener('click', (e)=> {
+contact.addEventListener('click', (e) => {
   e.preventDefault();
-  contactForm.style.display ="block"
+  contactForm.style.display = 'block';
   addForm.style.display = 'none';
-  listOfBooks.style.display = "none";
+  listOfBooks.style.display = 'none';
 });
 
 addListContent.addEventListener('click', (e) => {
   e.preventDefault();
   contactForm.style.display = 'none';
-  addForm.style.display='block';
-  listOfBooks.style.display = "none";
+  addForm.style.display = 'block';
+  listOfBooks.style.display = 'none';
 });
 
 list.addEventListener('click', () => {
-    addForm.style.display = 'none';
+  addForm.style.display = 'none';
   contactForm.style.display = 'none';
-  contactForm.style.display ="none";
-  listOfBooks.style.display = "block";
+  contactForm.style.display = 'none';
+  listOfBooks.style.display = 'block';
 });
 
 const showDateTime = () => {
