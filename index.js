@@ -50,6 +50,13 @@ const listOfBooks = document.querySelector('#list-section');
 const addForm = document.querySelector('#add-books-form');
 const theTime = document.querySelector('#time-section');
 
+window.onload = () => {
+  addForm.style.display = 'none';
+  contactForm.style.display = 'none';
+  contactForm.style.display = 'none';
+  listOfBooks.style.display = 'block';
+};
+
 contact.addEventListener('click', (e) => {
   e.preventDefault();
   contactForm.style.display = 'block';
