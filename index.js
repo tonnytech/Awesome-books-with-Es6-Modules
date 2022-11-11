@@ -1,6 +1,7 @@
 import Book from "./modules/books.js";
 import Store from "./modules/store.js";
 import UI from "./modules/user-interface.js";
+import { DateTime } from './modules/luxon.js';
 
 
 // Display book events
@@ -51,13 +52,6 @@ const listOfBooks = document.querySelector('#list-section');
 const addForm = document.querySelector('#add-books-form');
 const theTime = document.querySelector('#time-section');
 
-const showDateTime = () => {
-  const mytime =new Date();
-  const currentTime = mytime.toUTCString();
-  theTime.textContent = currentTime;
-}
-
-
 contact.addEventListener('click', (e)=> {
   e.preventDefault();
   contactForm.style.display ="block"
@@ -79,6 +73,10 @@ list.addEventListener('click', () => {
   listOfBooks.style.display = "block";
 });
 
-window.onload = () => { 
-  showDateTime(); 
-}
+const showDateTime = () => {
+  const time = DateTime.now();
+  const curTime = time.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
+
+  theTime.textContent = curTime;
+};
+setInterval(showDateTime, 1000);
